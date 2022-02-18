@@ -9,7 +9,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT','NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Trial2','DualSwords','JoyShield','JagdplauteShield','Club')
+	state.Weapons:options('None','DualSwords','JoyShield','JagdplauteShield','Club')
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -55,7 +55,6 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Weapons sets
-	sets.weapons.Trial2 = {main="Sapara of Trials",sub="Joyeuse"}
 	sets.weapons.DualSwords = {main="Joyeuse",sub="Jagdplaute"}
 	sets.weapons.JoyShield = {main="Joyeuse", sub="Serket Shield"}
 	sets.weapons.JagdplauteShield = {main="Jagdplaute", sub="Serket Shield"}
