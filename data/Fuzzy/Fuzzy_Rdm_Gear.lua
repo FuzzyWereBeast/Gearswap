@@ -386,7 +386,8 @@ function user_job_lockstyle()
 	end
 end
 
-autows_list = {['DualSwords']='Fast Blade'}
+autows_list = {['DualSwords']='Savage Blade'}
+autowstp = 1250
 
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
