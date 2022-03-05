@@ -352,7 +352,7 @@ function init_include()
 	if extra_user_setup then
         extra_user_setup()
     end
-
+--[[
 	if not selindrile_warned then
 		naughty_list = {'lua ','gearswap',' gs ','file','windower','plugin','addon','program','hack','bot ','bots ','botting','easyfarm'}
 		
@@ -371,7 +371,7 @@ function init_include()
 			end
 		end)
 	end
-	
+]]	
 	-- Event register to watch incoming items.
 	windower.raw_register_event('add item', function(bag, index, id, count)
 		if id == 4146 and world.area == "Ghoyu's Reverie" then --4146 Revitalizer ID

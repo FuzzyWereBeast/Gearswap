@@ -455,6 +455,20 @@ buff_spell_lists = {
 		{Name='Barparalyze',	Buff='Barparalyze',		SpellID=74,		Reapply=false},
 	},
 
+	Tiamat = {
+		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
+		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
+		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
+		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
+		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
+		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
+		{Name='Shock Spikes',	Buff='Shock Spikes',	SpellID=251,	Reapply=false},
+		{Name='Enthunder',		Buff='Enthunder',		SpellID=104,	Reapply=false},
+		{Name='Barfire',		Buff='Barfire',			SpellID=60,		Reapply=false},
+		{Name='Barparalyze',	Buff='Barparalyze',		SpellID=74,		Reapply=false},
+	},
+
 	Odin = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
 		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
