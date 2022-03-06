@@ -55,7 +55,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Weapons sets
-	sets.weapons.DualSwords = {main="Joyeuse",sub="Jagdplaute"}
+	sets.weapons.DualSwords = {main="Eminent Scimitar",sub="Joyeuse"}
 	sets.weapons.JoyShield = {main="Joyeuse", sub="Serket Shield"}
 	sets.weapons.JagdplauteShield = {main="Jagdplaute", sub="Serket Shield"}
 	sets.weapons.Club = {main="Chestnut Club", sub="Serket Shield"}
@@ -272,7 +272,7 @@ function init_gear_sets()
 	-- EG: sets.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	sets.engaged = {main="Joyeuse",
+	sets.engaged = {main="Eminent Scimitar",
 		head="Espial cap",			neck="Armiger's lace",		ear1="Sardonyx earring",		ear2="Fang earring",
 		body="Espial Gambison",		hands="Espial Bracers",		ring1="Rajas Ring",			ring2="Assailant's Ring",
 		back="Red Cape",			waist="Headlong belt",		legs="Espial Hose",				feet="Espial Socks"}
@@ -392,7 +392,7 @@ autowstp = 1250
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	When='Always'},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		When='Always'},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	When='Always'},
 		{Name='Aurorastorm',	Buff='Aurorastorm',		SpellID=119,	When='Idle'},
 		{Name='Reraise',		Buff='Reraise',			SpellID=135,	When='Always'},
 	},
@@ -405,7 +405,7 @@ buff_spell_lists = {
 	--gs c buffup [bufflist]
 	Default = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
 		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
 		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
@@ -413,7 +413,7 @@ buff_spell_lists = {
 
 	MageBuff = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
 		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
@@ -425,7 +425,7 @@ buff_spell_lists = {
 	
 	FullMeleeBuff = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Regen II',		Buff='Regen',			SpellID=110,	Reapply=false},
 		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
@@ -443,7 +443,7 @@ buff_spell_lists = {
 	
 	MeleeBuff = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
 		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
@@ -457,7 +457,7 @@ buff_spell_lists = {
 
 	Tiamat = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
 		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
@@ -471,7 +471,7 @@ buff_spell_lists = {
 
 	Odin = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
 		{Name='Gain-INT',		Buff='INT Boost',		SpellID=490,	Reapply=false},
 		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
@@ -484,7 +484,7 @@ buff_spell_lists = {
 	
 	Tolba = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
 		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
 		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
@@ -498,7 +498,7 @@ buff_spell_lists = {
 	
 	HybridCleave = {
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=false},
-		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=false},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
 		{Name='Gain-INT',		Buff='INT Boost',		SpellID=490,	Reapply=false},
 		{Name='Enthunder II',	Buff='Enthunder II',	SpellID=316,	Reapply=false},
