@@ -10,6 +10,11 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None','DualSwords','JoyShield','JagdplauteShield','Club')
+
+--	autows_list = {['DualSwords']='Savage Blade'}
+	autows = 'Savage Blade'
+	autowstp = 1250
+
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -385,9 +390,6 @@ function user_job_lockstyle()
 		windower.chat.input('/lockstyleset 032')
 	end
 end
-
-autows_list = {['DualSwords']='Savage Blade'}
-autowstp = 1250
 
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
