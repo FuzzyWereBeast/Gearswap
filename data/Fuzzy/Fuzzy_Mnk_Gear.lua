@@ -13,7 +13,8 @@ function user_job_setup()
 
 	state.Weapons:options("None","H2H","Club","Staff")
 
-	autows_list = {['H2H']='Combo',['Staff']='Heavy Swing'}
+	autows_list = {['H2H']='Backhand Blow',['Staff']='Heavy Swing'}
+	autows = 'Backhand Blow'
 	autowstp = 1250
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None'}
@@ -35,7 +36,7 @@ function init_gear_sets()
 	-- Weapons sets
 	--------------------------------------
 
-	sets.weapons.H2H = {main="Brass baghnakhs"}
+	sets.weapons.H2H = {main="Claws"}
 	sets.weapons.Club = {main="Ash Club"}
 	sets.weapons.Staff = {main="Ash Staff"}
 
@@ -184,10 +185,10 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee sets
-	sets.engaged = {main="Brass baghnakhs",
-		head="Bone Mask",				neck="Focus Collar",			ear1="Opal Earring",				ear2="Sardonyx Earring",
-		body="Bone Harness",			hands="Bone Mittens",			ring1="Windurstian Ring",			ring2="Safeguard Ring",
-		back="Traveler's Mantle",										legs="Bone Subligar",				feet="Bone Leggings"}
+	sets.engaged = {main="Claws",
+		head="Empress hairpin",					neck="Focus Collar",		ear1="Opal Earring",				ear2="Sardonyx Earring",
+		body="Mercenary Captain's Doublet",		hands="Shade Mittens",		ring1="Windurstian Ring",			ring2="Rajas ring",
+		back="Traveler's Mantle",											legs="Shade Tights",				feet="Shade Leggings"}
 
 	sets.engaged.SomeAcc = set_combine(sets.engaged, {})
 	sets.engaged.Acc = set_combine(sets.engaged.SomeAcc, {})
@@ -229,12 +230,14 @@ function init_gear_sets()
 	
 end
 
+--[[ Can't use Ajase Beads on Monk
 function customize_meleeSet(meleeSet)
 	if world.conquest and world.conquest.nation == player.nation then
 		meleeSet = set_combine(meleeSet,{neck="Ajase Beads"})
 	end
 	return meleeSet
 end
+]]
 
 
 -- Select default macro book on initial load or subjob change.
