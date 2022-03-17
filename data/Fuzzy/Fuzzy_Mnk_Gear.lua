@@ -11,10 +11,10 @@ function user_job_setup()
 
 	state.AutoSambaMode 	  = M{['description']= 'Auto Samba Mode', 'Off',--[[ 'Haste Samba', 'Aspir Samba', ]] 'Drain Samba'} -- This overwrites the standard AutoSambaMode
 
-	state.Weapons:options("None","H2H","Club","Staff")
+	state.Weapons:options("None","H2H",--[["Club",]]"Staff")
 
-	autows_list = {['H2H']='Backhand Blow',['Staff']='Heavy Swing'}
-	autows = 'Backhand Blow'
+	autows_list = {['H2H']='Raging Fists',['Staff']='Heavy Swing'}
+	autows = 'Raging Fists'
 	autowstp = 1250
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None'}
@@ -36,9 +36,9 @@ function init_gear_sets()
 	-- Weapons sets
 	--------------------------------------
 
-	sets.weapons.H2H = {main="Claws"}
-	sets.weapons.Club = {main="Ash Club"}
-	sets.weapons.Staff = {main="Ash Staff"}
+	sets.weapons.H2H = {main="Himantes"}
+--	sets.weapons.Club = {main="Ash Club"}
+	sets.weapons.Staff = {main="Oak pole"}
 
 	--------------------------------------
 	-- Start defining the sets
@@ -188,7 +188,7 @@ function init_gear_sets()
 	sets.engaged = {main="Claws",
 		head="Empress hairpin",					neck="Focus Collar",		ear1="Opal Earring",				ear2="Sardonyx Earring",
 		body="Mercenary Captain's Doublet",		hands="Shade Mittens",		ring1="Windurstian Ring",			ring2="Rajas ring",
-		back="Traveler's Mantle",											legs="Shade Tights",				feet="Shade Leggings"}
+		back="Bat Cape",													legs="Shade Tights",				feet="Shade Leggings"}
 
 	sets.engaged.SomeAcc = set_combine(sets.engaged, {})
 	sets.engaged.Acc = set_combine(sets.engaged.SomeAcc, {})
