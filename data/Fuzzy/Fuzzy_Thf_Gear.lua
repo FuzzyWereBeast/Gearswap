@@ -9,10 +9,13 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-    state.Weapons:options('None')
 
-    autows = 
-    autowstp = 1250
+  	state.AutoSambaMode 	  = M{['description']= 'Auto Samba Mode', 'Off',--[[ 'Haste Samba', 'Aspir Samba', ]] 'Drain Samba'} -- This overwrites the standard AutoSambaMode
+
+    state.Weapons:options('None','Archery')
+
+    autows = "Viper Bite"
+    autowstp = 1000
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -44,6 +47,7 @@ function init_gear_sets()
     --------------------------------------
 
 	-- Weapons sets
+    sets.weapons.Archery = {main="Bone Knife", sub="Chiroptera dagger", range="Federation Bow", ammo="Stone Arrow"}
 	
 	sets.TreasureHunter = {}
     sets.Kiting = {}
@@ -106,7 +110,7 @@ function init_gear_sets()
 
 
     -- Ranged snapshot gear
-    sets.precast.RA = {}
+    sets.precast.RA = {ear1="Impetus earring",  ring2="Jaeger ring"}
 
 
     -- Weaponskill sets
@@ -206,7 +210,10 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle = {}
+    sets.idle = {
+        head="Empress Hairpin",         neck="Focus Collar",            ear1="Opal Earring",            ear2="Clear Earring",
+        body="Brigandine armor",        hands="Shade Mittens",          ring1="Rajas ring",             ring2="Safeguard Ring",
+        back="Traveler's mantle",                                       legs="Shade Tights",            feet="Shade Leggings"}
 		
     sets.idle.Sphere = set_combine(sets.idle, {})
 
@@ -229,13 +236,18 @@ function init_gear_sets()
     --------------------------------------
 
     -- Normal melee group
-    sets.engaged = {}
+    sets.engaged = {
+        head="Empress Hairpin",         neck="Focus Collar",            ear1="Opal Earring",            ear2="Clear Earring",
+        body="Brigandine armor",        hands="Shade Mittens",          ring1="Rajas ring",             ring2="Safeguard Ring",
+        back="Traveler's mantle",                                       legs="Shade Tights",            feet="Shade Leggings"}
 
     sets.engaged.SomeAcc = {}
     
 	sets.engaged.Acc = {}
 		
-    sets.engaged.FullAcc = {}
+    sets.engaged.FullAcc = {
+        neck="Focus Collar",    
+        hands="Guerilla Gloves",        ring2='Jaeger ring'}
 
     sets.engaged.Fodder = {}
 
@@ -255,7 +267,7 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(8, 5)
+        set_macro_page(8, 1)
     elseif player.sub_job == 'WAR' then
         set_macro_page(7, 5)
     elseif player.sub_job == 'NIN' then
@@ -263,6 +275,13 @@ function select_default_macro_book()
     else
         set_macro_page(6, 5)
     end
+end
+
+function customize_meleeSet(meleeSet)
+	if world.conquest and world.conquest.nation == player.nation then
+		meleeSet = set_combine(meleeSet,{neck="Ajase Beads"})
+	end
+	return meleeSet
 end
 
 --Job Specific Trust Override
