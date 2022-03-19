@@ -12,7 +12,7 @@ function user_job_setup()
 
   	state.AutoSambaMode 	  = M{['description']= 'Auto Samba Mode', 'Off',--[[ 'Haste Samba', 'Aspir Samba', ]] 'Drain Samba'} -- This overwrites the standard AutoSambaMode
 
-    state.Weapons:options('None','Archery')
+    state.Weapons:options('None','Archery','Marksmanship')
 
     autows = "Viper Bite"
     autowstp = 1000
@@ -48,6 +48,7 @@ function init_gear_sets()
 
 	-- Weapons sets
     sets.weapons.Archery = {main="Bone Knife", sub="Chiroptera dagger", range="Federation Bow", ammo="Stone Arrow"}
+    sets.weapons.Marksmanship = {main="Bone Knife", sub="Chiroptera dagger", range="Seadog Gun", ammo="Bronze Bullet"}
 	
 	sets.TreasureHunter = {}
     sets.Kiting = {}
