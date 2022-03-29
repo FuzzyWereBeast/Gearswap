@@ -14,7 +14,7 @@ function user_job_setup()
 
     state.Weapons:options('None','Archery','Marksmanship')
 
-    autows = "Viper Bite"
+    autows = "Dancing Edge"
     autowstp = 1000
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
@@ -48,7 +48,7 @@ function init_gear_sets()
 
 	-- Weapons sets
     sets.weapons.Archery = {main="Bone Knife", sub="Chiroptera dagger", range="Federation Bow", ammo="Stone Arrow"}
-    sets.weapons.Marksmanship = {main="Bone Knife", sub="Chiroptera dagger", range="Seadog Gun", ammo="Bronze Bullet"}
+    sets.weapons.Marksmanship = {main="Bone Knife", sub="Chiroptera dagger", range="Seadog Gun", ammo="Iron Bullet"}
 	
 	sets.TreasureHunter = {}
     sets.Kiting = {}
@@ -111,7 +111,8 @@ function init_gear_sets()
 
 
     -- Ranged snapshot gear
-    sets.precast.RA = {ear1="Impetus earring",  ring2="Jaeger ring"}
+    sets.precast.RA = {ear1="Impetus earring",  ring2="Jaeger ring",
+        body="Rapparee Harness"}
 
 
     -- Weaponskill sets
@@ -213,8 +214,8 @@ function init_gear_sets()
 
     sets.idle = {
         head="Empress Hairpin",         neck="Focus Collar",            ear1="Opal Earring",            ear2="Clear Earring",
-        body="Brigandine armor",        hands="Shade Mittens",          ring1="Rajas ring",             ring2="Safeguard Ring",
-        back="Traveler's mantle",                                       legs="Shade Tights",            feet="Shade Leggings"}
+        body="Crow Jupon",              hands="Crow Bracers",          ring1="Rajas ring",             ring2="Safeguard Ring",
+        back="Traveler's mantle",                                       legs="Crow Hose",            feet="Crow GAiters"}
 		
     sets.idle.Sphere = set_combine(sets.idle, {})
 
@@ -239,16 +240,18 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         head="Empress Hairpin",         neck="Focus Collar",            ear1="Opal Earring",            ear2="Clear Earring",
-        body="Brigandine armor",        hands="Shade Mittens",          ring1="Rajas ring",             ring2="Safeguard Ring",
-        back="Traveler's mantle",                                       legs="Shade Tights",            feet="Shade Leggings"}
+        body="Crow Jupon",              hands="Crow Bracers",          ring1="Rajas ring",             ring2="Safeguard Ring",
+        back="Traveler's mantle",                                       legs="Crow Hose",            feet="Crow GAiters"}
 
     sets.engaged.SomeAcc = {}
     
-	sets.engaged.Acc = {}
+	sets.engaged.Acc = {
+        neck="Focus Collar",    
+        hands="Guerilla Gloves",        ring2='Jaeger ring'}
 		
     sets.engaged.FullAcc = {
         neck="Focus Collar",    
-        hands="Guerilla Gloves",        ring2='Jaeger ring'}
+        hands="Aiming Bracelets",        ring2='Jaeger ring'}
 
     sets.engaged.Fodder = {}
 
