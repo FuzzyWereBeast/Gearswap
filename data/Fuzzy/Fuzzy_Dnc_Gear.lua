@@ -69,7 +69,7 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {range="War Hoop",
-		head="Dancer's Tiara",      neck="Torque",      ear1="Melody Earring",
+		head="Etoile Tiara",      neck="Torque",      ear1="Melody Earring",
 		body="Dancer's Casaque",
 		waist="Corsette"}
         
@@ -201,9 +201,9 @@ function init_gear_sets()
     sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
     sets.idle.Town = {
-		head="Dancer's Tiara",
+		head="Etoile Tiara",
 		body="Dancer's Casaque",    hands="Dancer's Bangles",
-		legs="Dancer's tights"}
+		back="Etoile Cape",         legs="Dancer's tights"}
 
     
     -- Defense sets
