@@ -7,7 +7,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Daggers','Sword','H2H')
+	state.Weapons:options('Daggers','Sword','H2H','Trials')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
 	state.AutoSambaMode 	  = M{['description']= 'Auto Samba Mode', 'Off', 'Haste Samba', 'Aspir Samba II', 'Drain Samba III'}
@@ -51,7 +51,8 @@ function init_gear_sets()
 	sets.weapons.Daggers = {main="Eminent Dagger",sub="Kard"}
 	sets.weapons.Sword = {main="Joyeuse",sub="Eminent Dagger"}
     sets.weapons.H2H = {main="Himantes"}
-	
+	sets.weapons.Trials = {main="Eminent Dagger", sub="Peeler"}
+
     -- Precast Sets
 
     sets.precast.RA = {
