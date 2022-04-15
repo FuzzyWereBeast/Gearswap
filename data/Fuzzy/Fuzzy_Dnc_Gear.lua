@@ -51,7 +51,7 @@ function init_gear_sets()
 	sets.weapons.Daggers = {main="Eminent Dagger",sub="Kard"}
 	sets.weapons.Sword = {main="Joyeuse",sub="Eminent Dagger"}
     sets.weapons.H2H = {main="Himantes"}
-	sets.weapons.Trials = {main="Eminent Dagger", sub="Peeler"}
+	sets.weapons.Trials = {main="Eminent Dagger", sub="Renegade"}
 
     -- Precast Sets
 
@@ -147,8 +147,8 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
-	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Sherida Earring"}
+--	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
+--	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Sherida Earring"}
 	
     sets.Skillchain = {} --hands="Charis Bangles +2"
     
@@ -175,7 +175,7 @@ function init_gear_sets()
 		body="Espial Gambison",	hands="Espial Bracers", left_ring="Assailant's Ring",   right_ring="Vehemence Ring",
         back="Peiste Mantle",   waist="Headlong Belt",  legs="Espial Hose",             feet="Espial Socks"}
 		
-    sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
+    sets.idle.Sphere = set_combine(sets.idle, {})
 
     sets.idle.Town = {
 		head="Etoile Tiara",
@@ -191,7 +191,7 @@ function init_gear_sets()
 		
 	sets.defense.MEVA = {}
 
-    sets.Kiting = {feet="Skd. Jambeaux +1"}
+    sets.Kiting = {}
 
     -- Engaged sets
 
