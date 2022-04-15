@@ -58,7 +58,7 @@ function init_gear_sets()
     sets.precast.RA = {
 	    ear1="Impetus Earring",
 	    left_ring="Fistmele Ring",  right_ring="Longshot Ring",
-	    back="Lynx Mantle",}
+	    back="Lynx Mantle",     waist="Corsette",}
 
 
     -- Precast sets to enhance JAs
@@ -69,9 +69,9 @@ function init_gear_sets()
     
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {range="War Hoop",
-		head="Etoile Tiara",      neck="Torque",      ear1="Melody Earring",
-		body="Dancer's Casaque",
+    sets.precast.Waltz = {
+		head="Etoile Tiara",      neck="Auditory Torque",      ear1="Skald breloque",        ear2="Impregnable Earring",
+		body="Dancer's Casaque",    hands="Espial Bracers",     right_ring="Amber Ring",
 		waist="Corsette"}
         
     -- Don't need any special gear for Healing Waltz.
@@ -124,13 +124,13 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS["Rudra's Storm"].Fodder = set_combine(sets.precast.WS["Rudra's Storm"], {})
 	
-    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {waist="Thunder Belt",})
     sets.precast.WS["Shark Bite"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS["Shark Bite"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS["Shark Bite"].Fodder = set_combine(sets.precast.WS["Shark Bite"], {})
 	
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {waist="Soil Belt",})
     sets.precast.WS['Evisceration'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {})
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
@@ -204,15 +204,15 @@ function init_gear_sets()
 	sets.engaged = {                                    range="War Hoop",
 		head="Espial Cap",      neck="Focus Collar",    ear1="Suppanomimi",             ear2="Fang Earring",
 		body="Espial Gambison",	hands="Espial Bracers", left_ring="Assailant's Ring",   right_ring="Vehemence Ring",
-        back="Peiste Mantle",   waist="Headlong Belt",  legs="Espial Hose",             feet="Espial Socks"}
+        back="Cerberus Mantle",   waist="Headlong Belt",  legs="Espial Hose",             feet="Espial Socks"}
 		
    sets.engaged.DTLite = {}
 		
-    sets.engaged.SomeAcc = {}
+    sets.engaged.SomeAcc = {left_ring="Enlivened Ring"}
     
 	sets.engaged.Acc = set_combine(sets.engaged.SomeAcc,{})
 		
-    sets.engaged.FullAcc = set_combine(sets.engaged.Acc, {})
+    sets.engaged.FullAcc = set_combine(sets.engaged.Acc, {right_ring="Jaeger Ring"})
 
     sets.engaged.Fodder = set_combine(sets.engaged, {})
 
