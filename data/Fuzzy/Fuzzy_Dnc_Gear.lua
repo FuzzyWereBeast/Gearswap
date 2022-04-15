@@ -58,7 +58,7 @@ function init_gear_sets()
     sets.precast.RA = {
 	    ear1="Impetus Earring",
 	    left_ring="Fistmele Ring",  right_ring="Longshot Ring",
-	    back="Lynx Mantle",     waist="Corsette",}
+	    back="Lynx Mantle",}
 
 
     -- Precast sets to enhance JAs
@@ -168,21 +168,6 @@ function init_gear_sets()
     sets.ExtraRegen = {}
     
 
-    -- Idle sets
-
-	sets.idle = {                                    range="War Hoop",
-		head="Espial Cap",      neck="Focus Collar",    ear1="Suppanomimi",             ear2="Fang Earring",
-		body="Espial Gambison",	hands="Espial Bracers", left_ring="Assailant's Ring",   right_ring="Vehemence Ring",
-        back="Peiste Mantle",   waist="Headlong Belt",  legs="Espial Hose",             feet="Espial Socks"}
-		
-    sets.idle.Sphere = set_combine(sets.idle, {})
-
-    sets.idle.Town = {
-		head="Etoile Tiara",
-		body="Dancer's Casaque",    hands="Etoile Bangles",
-		back="Etoile Cape",         legs="Dancer's tights"}
-
-    
     -- Defense sets
 
     sets.defense.PDT = {}
@@ -226,6 +211,18 @@ function init_gear_sets()
 		
     sets.engaged.Fodder.PDT = {}
 
+    -- Idle sets
+
+	sets.idle = sets.engaged
+		
+    sets.idle.Sphere = set_combine(sets.idle, {})
+
+    sets.idle.Town = {
+		head="Etoile Tiara",
+		body="Dancer's Casaque",    hands="Etoile Bangles",
+		back="Etoile Cape",         legs="Dancer's tights"}
+
+    
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Saber Dance'] = {} --legs="Horos Tights"
     sets.buff['Climactic Flourish'] = {} --head="Charis Tiara +2"
