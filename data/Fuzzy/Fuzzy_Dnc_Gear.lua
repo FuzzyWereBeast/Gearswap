@@ -8,11 +8,13 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('Daggers','Sword','H2H','Trials')
+
+    autows = 'shark bite'
+    -- autowstp = 1250
+
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 
 	state.AutoSambaMode 	  = M{['description']= 'Auto Samba Mode', 'Off', 'Haste Samba', 'Aspir Samba II', 'Drain Samba III'}
-
-
 	
 	gear.stp_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.wsd_jse_back = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
@@ -79,7 +81,7 @@ function init_gear_sets()
     
     sets.precast.Samba = {head="Dancer's Tiara"} --head="Maxixi Tiara"
 
-    sets.precast.Jig = {feet="Dancer's Shoes"} --legs="Horos Tights", feet="Maxixi Toe Shoes"
+    sets.precast.Jig = {feet="Dancer's toe Shoes"} --legs="Horos Tights", feet="Maxixi Toe Shoes"
 
     sets.precast.Step = {hands="Dancer's Bangles"}
 		
@@ -189,7 +191,7 @@ function init_gear_sets()
 	sets.engaged = {                                    range="War Hoop",
 		head="Espial Cap",      neck="Focus Collar",    ear1="Suppanomimi",             ear2="Fang Earring",
 		body="Espial Gambison",	hands="Espial Bracers", left_ring="Assailant's Ring",   right_ring="Vehemence Ring",
-        back="Cerberus Mantle",   waist="Headlong Belt",  legs="Espial Hose",             feet="Espial Socks"}
+        back="Cerberus Mantle",   waist="Panthalassa sash",  legs="Espial Hose",             feet="Espial Socks"}
 		
    sets.engaged.DTLite = {}
 		
@@ -220,7 +222,7 @@ function init_gear_sets()
     sets.idle.Town = {
 		head="Etoile Tiara",
 		body="Dancer's Casaque",    hands="Etoile Bangles",
-		back="Etoile Cape",         legs="Dancer's tights"}
+		back="Etoile Cape",         legs="Dancer's tights",      feet="Dancer's toe shoes"}
 
     
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
@@ -234,4 +236,37 @@ end
 function select_default_macro_book()
     -- Default macro set/book
         set_macro_page(1, 2)
+end
+
+--Job Specific Trust Overwrite
+function check_trust()
+	if not moving then
+		if state.AutoTrustMode.value and not data.areas.cities:contains(world.area) and (buffactive['Elvorseal'] or buffactive['Reive Mark'] or not player.in_combat) then
+			local party = windower.ffxi.get_party()
+			if party.p5 == nil then
+				local spell_recasts = windower.ffxi.get_spell_recasts()
+
+				if spell_recasts[905] < spell_latency and not have_trust("Trion") then
+					windower.chat.input('/ma "Trion" <me>')
+					tickdelay = os.clock() + 3
+					return true
+				elseif spell_recasts[908] < spell_latency and not have_trust("Tenzen") then
+					windower.chat.input('/ma "Tenzen" <me>')
+					tickdelay = os.clock() + 3
+					return true
+				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
+					windower.chat.input('/ma "Koru-Moru" <me>')
+					tickdelay = os.clock() + 3
+					return true
+				elseif spell_recasts[955] < spell_latency and not have_trust("Apururu") then
+					windower.chat.input('/ma "Apururu (UC)" <me>')
+					tickdelay = os.clock() + 3
+					return true
+				else
+					return false
+				end
+			end
+		end
+	end
+	return false
 end
