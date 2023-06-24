@@ -78,7 +78,12 @@ function init_gear_sets()
 		body="Beast Jackcoat",	hands="Beast gloves",
 		waist="Corsette",		legs="Beast Trousers",	feet="Beast Gaiters"}
 
-	-- CURING WALTZ
+	sets.precast.JA.Charm20 = {
+		head="Noble's Ribbon",	neck="Bird Whistle",	ear1="Melody Earring",
+		body="Beast Jackcoat",	hands="Beast gloves",
+		waist="Corsette",		legs="Beast Trousers",	feet="Bounding Boots"}
+
+		-- CURING WALTZ
 	sets.precast.Waltz = set_combine(sets.precast.JA.Charm)
 
 		-- HEALING WALTZ
