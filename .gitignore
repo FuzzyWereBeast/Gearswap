@@ -22,6 +22,9 @@ data/instructions.txt
 libs/Mote-*
 libs/rev1/*
 data/export/*
+Snaps-RngHelper_Settings.xml
+
+
 libs/closetCleaner.lua
 Rename.bat
 Modes.lua
