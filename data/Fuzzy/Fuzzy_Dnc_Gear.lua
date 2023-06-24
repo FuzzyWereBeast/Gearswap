@@ -221,8 +221,8 @@ function init_gear_sets()
 
     sets.idle.Town = {
 		head="Etoile Tiara",
-		body="Dancer's Casaque",    hands="Etoile Bangles",
-		back="Etoile Cape",         legs="Dancer's tights",      feet="Dancer's toe shoes"}
+		body="Etoile's Casaque +1",     hands="Etoile Bangles",
+		back="Etoile Cape",             legs="Dancer's tights",      feet="Dancer's toe shoes"}
 
     
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
