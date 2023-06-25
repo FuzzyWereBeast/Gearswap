@@ -72,7 +72,7 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-		head="Etoile Tiara",      neck="Auditory Torque",      ear1="Skald breloque",        ear2="Impregnable Earring",
+		head="Etoile Tiara",        neck="Auditory Torque",     ear1="Skald breloque",      ear2="Impregnable Earring",
 		body="Dancer's Casaque",    hands="Espial Bracers",     right_ring="Amber Ring",
 		waist="Corsette"}
         
@@ -188,10 +188,10 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-	sets.engaged = {                                    range="War Hoop",
-		head="Espial Cap",      neck="Focus Collar",    ear1="Suppanomimi",             ear2="Fang Earring",
-		body="Espial Gambison",	hands="Espial Bracers", left_ring="Assailant's Ring",   right_ring="Vehemence Ring",
-        back="Cerberus Mantle",   waist="Panthalassa sash",  legs="Espial Hose",             feet="Espial Socks"}
+	sets.engaged = {                                          range="War Hoop",
+        head = "Espial Cap",      neck  = "Focus Collar",     ear1      = "Suppanomimi",      ear2       = "Fang Earring",
+        body = "Espial Gambison", hands = "Espial Bracers",   left_ring = "Assailant's Ring", right_ring = "Vehemence Ring",
+        back = "Cerberus Mantle", waist = "Panthalassa sash", legs      = "Espial Hose",      feet       = "Espial Socks"}
 		
    sets.engaged.DTLite = {}
 		
