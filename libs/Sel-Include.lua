@@ -236,6 +236,7 @@ function init_include()
 	autonuke = 'Fire'
 	autows = ''
 	autows_list = {}
+	weapons_pagelist = {}
 	smartws = nil
 	rangedautows = ''
 	autowstp = 1000
@@ -591,7 +592,7 @@ end
 -- Non item-based global settings to check on load.
 function global_on_load()
 	if world.area then
-		set_dual_wield()
+		set_dual_wield:schedule(3)
 		
 		if world.area:contains('Abyssea') or data.areas.proc:contains(world.area) then
 			state.SkipProcWeapons:set('False')
@@ -1647,7 +1648,9 @@ function get_idle_set(petStatus)
 		elseif state.Weapons.value == 'None' or state.UnlockWeapons.value then
 				idleSet = set_combine(idleSet, sets.IdleWakeUp)
 		elseif state.PWUnlock.value then
-			windower.send_command('gs c set unlockweapons true; wait 1; gs c set unlockweapons false')
+			send_command('@input //gs c set unlockweapons true')
+			windower.chat.input:schedule(3,'//gs c set unlockweapons false')
+			tickdelay = os.clock() + 1.25
 			idleSet = set_combine(idleSet, sets.IdleWakeUp)
 		end
 	end
@@ -1755,7 +1758,9 @@ function get_melee_set()
 		elseif state.Weapons.value == 'None' or state.UnlockWeapons.value then
 			meleeSet = set_combine(meleeSet, sets.buff.Sleep)
 		elseif state.PWUnlock.value then
-			windower.send_command('gs c set unlockweapons true; wait 1; gs c set unlockweapons false')
+			send_command('@input //gs c set unlockweapons true')
+			windower.chat.input:schedule(3,'//gs c set unlockweapons false')
+			tickdelay = os.clock() + 1.25
 			meleeSet = set_combine(meleeSet, sets.buff.Sleep)
 		end
 	end
@@ -2208,7 +2213,7 @@ end
 
 -- Called when the player's subjob changes.
 function sub_job_change(newSubjob, oldSubjob)
-	set_dual_wield()
+	set_dual_wield:schedule(2)
     if user_setup then
         user_setup()
     end
@@ -2340,9 +2345,18 @@ function state_change(stateField, newValue, oldValue)
 			newValue = state.Weapons.value
 			if not state.ReEquip.value then	equip_weaponset(newValue) end
 		end
-		
+
 		if autows_list[newValue] then
-			autows = autows_list[newValue]
+			if type(autows_list[newValue]) == "table" then
+				autows 		= autows_list[newValue][1]
+				autowstp 	= autows_list[newValue][2]
+			else
+				autows 		= autows_list[newValue]
+			end
+		end
+
+		if weapons_pagelist[newValue] then
+			set_macro_page(weapons_pagelist[newValue][1], weapons_pagelist[newValue][2])
 		end
 	elseif stateField == 'Unlock Weapons' then
 		if newValue == true then
